@@ -61,7 +61,7 @@ database.registerUser = async (username, password) => {
  */
 async function connectDatabase () {
   try {
-    database.mongoose = await mongoose.connect('mongodb+srv://rynosuki:Minne2013@crud-robin.qhlgmni.mongodb.net/CRUD')
+    database.mongoose = await mongoose.connect('mongodb+srv://rynosuki:xxx@crud-robin.qhlgmni.mongodb.net/CRUD')
     // database.mongoose = await mongoose.connect('mongodb://127.0.0.1:27017')
     console.log('\x1b[32mConnected to database\x1b[0m')
   } catch (error) {
