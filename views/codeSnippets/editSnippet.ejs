@@ -1,0 +1,22 @@
+<section class="addSnippetContainer">
+  <% if (username && username !== undefined) { %>
+  <div class="addSnippet">
+    <div class="formAddSnippet">
+      <form class="formAddSnippet" action="/codesnippets/<%=locals.flash._id%>/update" method="POST">
+        <label for="title"></label>
+        <input type="text" name="title" placeholder="Title" value= <%= locals.flash.title %>>
+        <label for="description"></label>
+        <input type="text" name="description" placeholder="Description" value= <%= locals.flash.description %> >
+        <textarea name="code" id="" cols="16" rows="10" placeholder="Code" style="resize: none;" ><%= locals.flash.code %></textarea>
+        <input type="text" name="tags" placeholder="Tags" value= <%= locals.flash.tags %>>
+        <input type="hidden" name="owner_id" value=<%= locals.flash.owner %>>
+        <button class="addSnippetSwitch" value="update">Update</button>
+      </form>
+      <form class="formReturnSnippet" action="/codesnippets" method="GET">
+        <button class="addSnippetSwitch" value="return">Return</button>
+      </form>
+    </div>
+
+    <% } %>
+  </div>
+</section>

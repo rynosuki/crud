@@ -1,0 +1,23 @@
+<%- include('partials/header', {username: username}) %>
+<main>
+  <div class="registerContainer">
+    <div class="backgroundLogin"></div>
+    <div class="topText">
+      <h1>Create account</h1>
+    </div>
+    <form class="registerForm" action="/submitregister" method="post">
+      <label for="username">Username</label>
+      <input type="text" name="username" />
+      <label for="password">Password</label>
+      <input type="password" name="password" />
+      <label for="password">Repeat password</label>
+      <input type="password" name="password2" />
+      <input type="submit" value="Register" />
+    </form>
+    <% if (locals.flash !== undefined) { %>
+      <h2 class="errorMessage"><%= locals.flash %></h2>
+    <% } else { %>
+      <h2 class="errorMessage"></h2>
+    <% } %>
+  </div>
+</main>

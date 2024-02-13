@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap");
+
+body {
+  box-sizing: border-box;
+  background-color: #1e1e1e;
+  width: 100vw;
+  height: 100vh;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(/public/background.jpg);
+  background-size: cover;
+  background-position: 0 70%;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+@keyframes getIntoView {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.navBar {
+  animation: 2.5s ease-out getIntoView;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5vw;
+  padding: 10px;
+  color: #fff;
+  width: 80vw;
+}
+
+.navContainer {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  width: 100vw;
+}
+
+.loginInfo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0 10px;
+}
+
+.imageLink {
+  position: relative;
+  width: 20vw;
+  height: 30vh;
+  transition: 0.5s;
+  cursor: pointer;
+  border-radius: 25%;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.284);
+  border: 3px solid #fff;
+  overflow: hidden;
+}
+
+.imageLink:hover {
+  scale: 1.1;
+}
+
+.imageLink:hover .codesnippetImage,
+.imageLink:hover .loginImage,
+.imageLink:hover .registerImage {
+  transform: scale(1.2);
+  filter: grayscale(0%);
+}
+
+.imageLink::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.232);
+  border-radius: 25%;
+}
+
+.codesnippetImage {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  border-radius: 25%;
+  background-image: url(/public/codeSnippet.jpg);
+  filter: grayscale(75%);
+  transition: all 0.5s;
+}
+
+.loginImage {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  border-radius: 25%;
+  background-image: url(/public/login.jpg);
+  filter: grayscale(75%);
+  transition: all 0.5s;
+}
+
+.registerImage {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  border-radius: 25%;
+  background-image: url(/public/register.jpg);
+  filter: grayscale(75%);
+  transition: all 0.5s;
+}
+
+.imageLink p {
+  width: 100%;
+  text-decoration: none;
+  color: #fff;
+  position: absolute;
+  bottom: 10%;
+  text-align: center;
+  font-size: 3rem;
+}
+
+html,
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+label,
+input,
+button,
+a,
+li,
+ul,
+ol,
+span,
+div,
+textarea,
+select,
+option,
+form,
+fieldset,
+legend,
+table,
+tr,
+th,
+td,
+caption,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  font-family: "Comfortaa", cursive;
+}

@@ -1,0 +1,21 @@
+<section class="addSnippetContainer">
+  
+  <div class="addSnippet">
+    <form class="formAddSnippet" action="/codesnippets/add" method="POST">
+      <% if (username && username !== undefined) { %>
+        <% if (locals.flash) { %>
+          <h2><%=JSON.stringify(locals.flash)%></h2>
+        <% } else {%>
+          <h2></h2>
+        <% } %>
+      <label for="title"></label>
+      <input type="text" name="title" placeholder="Title" />
+      <label for="description"></label>
+      <input type="text" name="description" placeholder="Description" />
+      <textarea name="code" id="" cols="16" rows="10" placeholder="Code" style="resize: none;"></textarea>
+      <input type="text" name="tags" placeholder="Tags (seperated by comma)" />
+      <button class="addSnippetSwitch" value="switch">Add snippet</button>
+    </form>
+    <% } %>
+  </div>
+</section>

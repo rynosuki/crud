@@ -1,0 +1,15 @@
+<%- include('partials/header', {username: username}) %>
+<main class="mainCodeSnippets">
+  <section class="snippetsContainer">
+    <h1>Welcome <%= username %></h1>
+    <section class="snippetShowcaseContainer">
+      <div class="back"></div>
+      <% if (locals.flash !== null && typeof locals.flash !== 'string') { %>
+        <%- include('codeSnippets/editSnippet') %>
+      <% } else {%>
+        <%- include('codeSnippets/addSnippet') %>
+      <% } %>  
+      <%- include('codeSnippets/snippetShowcase') %>
+    </section>
+  </section>
+</main>

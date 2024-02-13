@@ -1,0 +1,23 @@
+<%- include('partials/header', {username: username}) %>
+<main>
+  <div class="loginContainer">
+    <div class="backgroundLogin"></div>
+    <div class="topText">
+      <h1>Login</h1>
+    </div>
+    <form class="loginForm" action="/handle" method="post">
+      <label for="username">Username</label>
+      <input type="text" name="username" />
+      <label for="password">Password</label>
+      <input type="password" name="password" />
+      <input type="submit" value="Login" />
+    </form>
+    <a class="registerLink" href="/register">Create an account.</a>
+    <% if (locals.error !== undefined) { %>
+      <h2 class="errorMessage"><%= error %></h2>
+    <% } else { %>
+      <h2 class="errorMessage"></h2>
+    <% } %>
+  </div>
+</main>
+

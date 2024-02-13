@@ -1,0 +1,46 @@
+<div class="snippetShowcase">
+  <% if (snippets.length > 0) { %>
+  <% snippets.forEach((snippet) => { %>
+  <div class="snippet">
+    <h2><%= snippet.title %></h2>
+    <div class="openSnippet closedSnippet">
+      <div class="back"></div>
+      <div class="snippetInfo">
+        <p><%= snippet.description %></p>
+        <hr>
+        <pre class="codeBlock"><code><%= snippet.code %></code></pre>
+        <div class="snippet-tags">
+          <% snippet.tags.forEach(element => {
+            %><span class="tag">#<%= element %> </span><%
+          })%>
+        </div>
+        <% if (snippet.owner === locals.genid) { %>
+          <span class="snippetButtons">
+            <form action="/codesnippets/<%= snippet._id %>/edit" method="POST">
+              <input type="hidden" name="owner_id" value=<%= snippet.owner %>>
+              <button class="editButton">Edit</button>
+            </form>
+            <form action="/codesnippets/<%= snippet._id %>/delete" method="POST">
+              <input type="hidden" name="owner_id" value=<%= snippet.owner %>>
+              <button class="deleteButton" type="submit">Delete</button>
+            </form>
+          </span>
+        <% } %>
+      </div>
+      
+    </div>
+  </div>
+  <% }) %>
+  <% } else { %>
+  <p>No snippets yet</p>
+  <% } %>
+</div>
+<script type="text/javascript">
+  const snippets = document.querySelectorAll('.snippet');
+  snippets.forEach((snippet) => {
+    snippet.addEventListener('click', () => {
+      snippet.classList.toggle('openSnippet');
+      console.log("Toggled");
+    });
+  });
+</script>

@@ -1,29 +1,47 @@
 {
-  "name": "crud",
+  "name": "b2-crud",
   "version": "1.0.0",
-  "description": "Create-Read-Update-Delete Server",
-  "main": "index.js",
-  "type": "module",
+  "description": "",
+  "main": "app.mjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "htmlhint": "npx htmlhint ./public || exit 0",
+    "stylelint": "npx stylelint \"./public/**/*.css\" || exit 0",
+    "stylelint:fix": "npx stylelint --fix \"./public/**/*.css\" || exit 0",
+    "eslint": "npx eslint . --ext .mjs || exit 0",
+    "eslint:fix": "npx eslint . --ext .mjs --fix || exit 0",
+    "jsdoc": "npx jsdoc -c .jsdoc.json || exit 0",
+    "lint": "npm run htmlhint && npm run stylelint && npm run eslint",
+    "clean": "rm -rf build/",
+    "clean-all": "npm run clean && rm -rf node_modules/ && rm -f package-lock.json",
+    "start": "node app.mjs"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rynosuki/crud.git"
+    "url": "git@gitlab.lnu.se:1dv528/student/rs223dj/b2-crud.git"
   },
-  "keywords": [
-    "crud"
-  ],
-  "author": "Robin Svensson",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rynosuki/crud/issues"
-  },
-  "homepage": "https://github.com/rynosuki/crud#readme",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "body-parser": "^1.20.1",
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.8",
     "express": "^4.18.2",
-    "mongoose": "^6.8.4"
+    "express-session": "^1.17.3",
+    "mongoose": "^6.9.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.34.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsdoc": "^40.0.0",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "nodemon": "^2.0.20"
   }
 }

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD - Website</title>
+    <link rel="stylesheet" href="/public/style.css" />
+    <link rel="stylesheet" href="/public/login.css" />
+    <link rel="stylesheet" href="/public/snippets.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/public/favicon.png"
+    />
+  </head>
+  <body>
+    <div class="background"></div>
+    <div class="navContainer">
+      <h2 class="loginInfo">
+        <% if (username && username !== undefined) { %> Logged in as <%=
+        username %>
+        <a href="/logout">Logout</a>
+        <% } else { %>
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+        <% } %>
+      </h2>
+      <h1>CRUD - Website</h1>
+    </div>
+  </body>
+</html>
